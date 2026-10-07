@@ -1,203 +1,73 @@
-<!DOCTYPE html>
-<html lang="fr">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Mikefri Apps – Applications Android créées en France</title>
-<meta name="description" content="Développeur indépendant français : Radio Flow, Plein Ciel et RadarZen. Des applications Android gratuites, simples et respectueuses de votre vie privée.">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700;900&family=Rajdhani:wght@400;500;600;700&display=swap" rel="stylesheet">
-<style>
-:root{
-  --bg:#04060f; --cyan:#00e5ff; --purple:#7c4dff; --pink:#ff4dd2;
-  --text:#e8ecf8; --muted:#9aa3c0;
-  --glass:rgba(255,255,255,.05); --border:rgba(255,255,255,.1);
+<!-- ===== SEO PRINCIPAL ===== -->
+<title>Mikefri Apps – Applications Android gratuites créées en France</title>
+<meta name="description" content="Radio gratuite, météo sans pub, prévention routière : des applications Android gratuites et respectueuses de votre vie privée, créées en France par Mikefri Apps.">
+<link rel="canonical" href="https://mikefri-studio.github.io/">
+<meta name="robots" content="index, follow">
+<meta name="author" content="Mikefri Apps">
+<meta name="theme-color" content="#04060f">
+
+<!-- ===== OPEN GRAPH (partage Facebook/WhatsApp/etc.) ===== -->
+<meta property="og:site_name" content="Mikefri Apps">
+<meta property="og:title" content="Mikefri Apps – Applications Android gratuites créées en France">
+<meta property="og:description" content="Radio Flow, Plein Ciel, RadarZen : des apps Android honnêtes, gratuites et sans pub intrusive.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://mikefri-studio.github.io/">
+<meta property="og:locale" content="fr_FR">
+
+<!-- ===== TWITTER CARD ===== -->
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Mikefri Apps – Applications Android gratuites">
+<meta name="twitter:description" content="Des apps Android honnêtes créées en France : radio, météo, prévention routière.">
+
+<!-- ===== DONNÉES STRUCTURÉES (le secret des riches résultats Google) ===== -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Person",
+      "@id": "https://mikefri-studio.github.io/#person",
+      "name": "Michaël Frischherz",
+      "alternateName": "Mikefri Apps",
+      "jobTitle": "Développeur indépendant",
+      "email": "mailto:mikefri.app@gmail.com",
+      "nationality": "French"
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://mikefri-studio.github.io/#website",
+      "url": "https://mikefri-studio.github.io/",
+      "name": "Mikefri Apps",
+      "inLanguage": "fr-FR",
+      "publisher": { "@id": "https://mikefri-studio.github.io/#person" }
+    },
+    {
+      "@type": "SoftwareApplication",
+      "name": "Radio Flow",
+      "operatingSystem": "ANDROID",
+      "applicationCategory": "MultimediaApplication",
+      "url": "https://play.google.com/store/apps/details?id=com.mikefri.radioflow",
+      "description": "Application radio gratuite : des milliers de stations du monde entier en streaming, sans inscription.",
+      "offers": { "@type": "Offer", "price": "0", "priceCurrency": "EUR" }
+    },
+    {
+      "@type": "SoftwareApplication",
+      "name": "Plein Ciel",
+      "operatingSystem": "ANDROID",
+      "applicationCategory": "UtilitiesApplication",
+      "url": "https://play.google.com/store/apps/details?id=com.mikefri.pleinciel",
+      "description": "Application météo gratuite sans publicité : radar pluie animé et prévisions 16 jours.",
+      "offers": { "@type": "Offer", "price": "0", "priceCurrency": "EUR" }
+    },
+    {
+      "@type": "SoftwareApplication",
+      "name": "RadarZen",
+      "operatingSystem": "ANDROID",
+      "applicationCategory": "TravelApplication",
+      "url": "https://mikefri-studio.github.io/",
+      "description": "Copilote de prévention routière : alertes radars fixes (données officielles) et dangers routiers communautaires.",
+      "offers": { "@type": "Offer", "price": "0", "priceCurrency": "EUR" }
+    }
+  ]
 }
-*{margin:0;padding:0;box-sizing:border-box}
-html{scroll-behavior:smooth}
-body{background:var(--bg);color:var(--text);font-family:'Rajdhani',system-ui,sans-serif;overflow-x:hidden;font-size:18px}
-
-/* ===== FOND FUTURISTE ===== */
-.grid-bg{position:fixed;inset:0;z-index:-2;
-  background-image:linear-gradient(rgba(0,229,255,.06) 1px,transparent 1px),linear-gradient(90deg,rgba(0,229,255,.06) 1px,transparent 1px);
-  background-size:60px 60px;
-  mask-image:radial-gradient(ellipse at center,black 20%,transparent 75%);}
-.orb{position:fixed;border-radius:50%;filter:blur(90px);z-index:-1;opacity:.5;animation:float 12s ease-in-out infinite}
-.orb1{width:420px;height:420px;background:var(--purple);top:-120px;left:-120px}
-.orb2{width:350px;height:350px;background:var(--cyan);bottom:-100px;right:-100px;animation-delay:-4s}
-.orb3{width:260px;height:260px;background:var(--pink);top:40%;left:70%;animation-delay:-8s;opacity:.3}
-@keyframes float{0%,100%{transform:translate(0,0)}50%{transform:translate(40px,-40px)}}
-
-/* ===== NAVBAR ===== */
-nav{position:fixed;top:0;width:100%;z-index:100;display:flex;justify-content:space-between;align-items:center;
-  padding:16px 6%;backdrop-filter:blur(14px);background:rgba(4,6,15,.6);border-bottom:1px solid var(--border)}
-.logo{font-family:'Orbitron';font-weight:900;font-size:1.1rem;letter-spacing:2px;
-  background:linear-gradient(90deg,var(--cyan),var(--purple));-webkit-background-clip:text;background-clip:text;color:transparent}
-nav ul{display:flex;gap:28px;list-style:none}
-nav a{color:var(--muted);text-decoration:none;font-weight:600;letter-spacing:1px;transition:.3s}
-nav a:hover{color:var(--cyan);text-shadow:0 0 12px var(--cyan)}
-
-/* ===== HERO ===== */
-header{min-height:100vh;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding:120px 20px 60px}
-.badge{display:inline-block;padding:8px 18px;border:1px solid var(--cyan);border-radius:50px;color:var(--cyan);
-  font-size:.85rem;letter-spacing:2px;margin-bottom:24px;box-shadow:0 0 20px rgba(0,229,255,.25) inset}
-h1{font-family:'Orbitron';font-size:clamp(2.2rem,6vw,4.5rem);font-weight:900;line-height:1.1;
-  background:linear-gradient(90deg,var(--cyan),var(--purple),var(--pink),var(--cyan));background-size:300%;
-  -webkit-background-clip:text;background-clip:text;color:transparent;animation:shine 6s linear infinite}
-@keyframes shine{to{background-position:300%}}
-header p{max-width:640px;margin:24px auto;color:var(--muted);font-size:1.2rem}
-.cta{display:flex;gap:16px;justify-content:center;flex-wrap:wrap;margin-top:12px}
-.btn{padding:14px 32px;border-radius:12px;text-decoration:none;font-weight:700;letter-spacing:1px;transition:.3s;font-size:1rem}
-.btn-primary{background:linear-gradient(90deg,var(--cyan),var(--purple));color:#04060f;box-shadow:0 0 30px rgba(0,229,255,.4)}
-.btn-primary:hover{transform:translateY(-3px);box-shadow:0 0 50px rgba(0,229,255,.7)}
-.btn-ghost{border:1px solid var(--border);color:var(--text)}
-.btn-ghost:hover{border-color:var(--cyan);color:var(--cyan)}
-
-/* ===== SECTIONS ===== */
-section{max-width:1100px;margin:0 auto;padding:90px 20px}
-h2{font-family:'Orbitron';font-size:clamp(1.4rem,3vw,2rem);letter-spacing:2px;margin-bottom:40px;text-align:center}
-h2 span{background:linear-gradient(90deg,var(--cyan),var(--purple));-webkit-background-clip:text;background-clip:text;color:transparent}
-h2::after{content:'';display:block;width:70px;height:3px;margin:14px auto 0;border-radius:3px;
-  background:linear-gradient(90deg,var(--cyan),var(--purple));box-shadow:0 0 15px var(--cyan)}
-
-/* ===== CARTES APPS ===== */
-.apps{display:grid;gap:26px;grid-template-columns:repeat(auto-fit,minmax(290px,1fr))}
-.card{position:relative;background:var(--glass);border:1px solid var(--border);border-radius:20px;padding:32px;
-  backdrop-filter:blur(12px);overflow:hidden;transition:.4s}
-.card::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;
-  background:linear-gradient(90deg,transparent,var(--cyan),transparent);opacity:0;transition:.4s}
-.card:hover{transform:translateY(-8px);border-color:rgba(0,229,255,.4);box-shadow:0 10px 40px rgba(0,229,255,.15)}
-.card:hover::before{opacity:1}
-.card .icon{font-size:2.6rem;margin-bottom:16px;display:inline-block;filter:drop-shadow(0 0 12px rgba(0,229,255,.6))}
-.card h3{font-family:'Orbitron';letter-spacing:1px;margin-bottom:12px}
-.card p{color:var(--muted);margin-bottom:22px;line-height:1.6}
-.tag{position:absolute;top:20px;right:20px;font-size:.72rem;letter-spacing:2px;padding:5px 12px;border-radius:50px;font-weight:700}
-.tag-live{color:#0f8;border:1px solid #0f8;box-shadow:0 0 12px rgba(0,255,136,.3)}
-.tag-test{color:#fb0;border:1px solid #fb0;box-shadow:0 0 12px rgba(255,187,0,.3)}
-.card .btn{display:inline-block;padding:11px 24px;font-size:.9rem}
-
-/* ===== ENGAGEMENTS ===== */
-.valeurs{display:grid;gap:20px;grid-template-columns:repeat(auto-fit,minmax(220px,1fr))}
-.valeur{background:var(--glass);border:1px solid var(--border);border-radius:16px;padding:28px;text-align:center;
-  backdrop-filter:blur(10px);transition:.3s}
-.valeur:hover{border-color:var(--purple);box-shadow:0 0 30px rgba(124,77,255,.2);transform:translateY(-5px)}
-.valeur .icon{font-size:2rem;margin-bottom:12px}
-.valeur h4{font-family:'Orbitron';letter-spacing:1px;margin-bottom:8px;font-size:.95rem}
-.valeur p{color:var(--muted);font-size:.95rem}
-
-/* ===== À PROPOS / CONTACT ===== */
-.about{background:var(--glass);border:1px solid var(--border);border-radius:20px;padding:40px;backdrop-filter:blur(12px);line-height:1.8;color:var(--muted)}
-.about strong{color:var(--cyan)}
-.contact{text-align:center}
-.contact a.mail{font-family:'Orbitron';color:var(--cyan);text-decoration:none;font-size:clamp(1rem,3vw,1.5rem);letter-spacing:1px}
-.contact a.mail:hover{text-shadow:0 0 20px var(--cyan)}
-
-/* ===== FOOTER ===== */
-footer{border-top:1px solid var(--border);padding:36px 20px;text-align:center;color:var(--muted);font-size:.9rem}
-footer a{color:var(--muted);text-decoration:none}
-footer a:hover{color:var(--cyan)}
-
-/* ===== ANIMATION SCROLL ===== */
-.reveal{opacity:0;transform:translateY(30px);transition:all .8s ease}
-.reveal.visible{opacity:1;transform:translateY(0)}
-
-@media(max-width:700px){nav ul{display:none}}
-</style>
-</head>
-<body>
-
-<div class="grid-bg"></div>
-<div class="orb orb1"></div>
-<div class="orb orb2"></div>
-<div class="orb orb3"></div>
-
-<nav>
-  <div class="logo">MIKEFRI APPS</div>
-  <ul>
-    <li><a href="#apps">APPS</a></li>
-    <li><a href="#engagements">ENGAGEMENTS</a></li>
-    <li><a href="#apropos">À PROPOS</a></li>
-    <li><a href="#contact">CONTACT</a></li>
-  </ul>
-</nav>
-
-<header>
-  <div class="badge">🇫 DÉVELOPPEUR INDÉPENDANT</div>
-  <h1>DES APPS ANDROID<br>SIMPLES & HONNÊTES</h1>
-  <p>Radio, météo, prévention routière : je crée des applications gratuites, sans publicité intrusive et respectueuses de votre vie privée.</p>
-  <div class="cta">
-    <a class="btn btn-primary" href="#apps">DÉCOUVRIR MES APPS</a>
-    <a class="btn btn-ghost" href="#contact">ME CONTACTER</a>
-  </div>
-</header>
-
-<section id="apps">
-  <h2>MES <span>APPLICATIONS</span></h2>
-  <div class="apps">
-    <div class="card reveal">
-      <span class="tag tag-live">EN LIGNE</span>
-      <span class="icon">📻</span>
-      <h3>RADIO FLOW</h3>
-      <p>Des milliers de stations de radio du monde entier en streaming gratuit. Favoris, historique, minuteur de sommeil — sans inscription.</p>
-      <a class="btn btn-primary" href="https://play.google.com/store/apps/details?id=com.mikefri.radioflow" target="_blank">▶ GOOGLE PLAY</a>
-    </div>
-    <div class="card reveal">
-      <span class="tag tag-live">EN LIGNE</span>
-      <span class="icon">🌦️</span>
-      <h3>PLEIN CIEL</h3>
-      <p>Météo en temps réel, radar pluie animé et prévisions jusqu'à 16 jours. Légère, rapide, 100 % gratuite et sans publicité.</p>
-      <a class="btn btn-primary" href="https://play.google.com/store/apps/details?id=com.mikefri.pleinciel" target="_blank">▶ GOOGLE PLAY</a>
-    </div>
-    <div class="card reveal">
-      <span class="tag tag-test">EN TEST</span>
-      <span class="icon">🚗</span>
-      <h3>RADARZEN</h3>
-      <p>Votre copilote de prévention routière : alertes radars fixes (données officielles) et dangers routiers signalés par la communauté.</p>
-      <a class="btn btn-ghost" href="#">⏳ BIENTÔT DISPONIBLE</a>
-    </div>
-  </div>
-</section>
-
-<section id="engagements">
-  <h2>MES <span>ENGAGEMENTS</span></h2>
-  <div class="valeurs">
-    <div class="valeur reveal"><div class="icon">💯</div><h4>GRATUITÉ</h4><p>Pas d'abonnement caché, pas de surprise.</p></div>
-    <div class="valeur reveal"><div class="icon">🚫</div><h4>SANS PUB INTRUSIVE</h4><p>Votre confort d'utilisation d'abord.</p></div>
-    <div class="valeur reveal"><div class="icon">🔒</div><h4>VIE PRIVÉE</h4><p>Le minimum de données, le maximum de respect.</p></div>
-    <div class="valeur reveal"><div class="icon">🇫🇷</div><h4>FAIT EN FRANCE</h4><p>Développé avec passion, mis à jour régulièrement.</p></div>
-  </div>
-</section>
-
-<section id="apropos">
-  <h2>À <span>PROPOS</span></h2>
-  <div class="about reveal">
-    <p>Bonjour ! Moi c'est <strong>Michaël</strong>, développeur indépendant sous le nom de <strong>Mikefri Apps</strong>.
-    Je crée des applications Android utiles au quotidien, avec une conviction simple : une bonne application doit être
-    <strong>honnête, gratuite ou abordable, et respectueuse de vos données</strong>. Chaque app est développée, testée
-    et améliorée en continu, en écoutant vraiment les retours des utilisateurs. Une idée, un bug, une suggestion ?
-    Écrivez-moi, je réponds toujours.</p>
-  </div>
-</section>
-
-<section id="contact" class="contact">
-  <h2>ME <span>CONTACTER</span></h2>
-  <p style="color:var(--muted);margin-bottom:20px">Une question, un partenariat, un bug à signaler ?</p>
-  <a class="mail" href="mailto:mikefri.app@gmail.com">mikefri.app@gmail.com</a>
-</section>
-
-<footer>
-  © 2026 Mikefri Apps – France<br><br>
-  <a href="https://mikefri-studio.github.io/Regles-de-confidentialite/RadioFlow-Regles.html">Confidentialité Radio Flow</a> ·
-  <a href="https://mikefri-studio.github.io/Regles-de-confidentialite/RadarZen-Regles.html">Confidentialité RadarZen</a>
-</footer>
-
-<script>
-// Animation d'apparition au scroll
-const obs = new IntersectionObserver(entries => {
-  entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
-}, { threshold: 0.15 });
-document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
 </script>
-
-</body>
-</html>
