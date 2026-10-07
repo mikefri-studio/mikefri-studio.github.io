@@ -26,7 +26,8 @@
   "@graph": [
     { "@type": "Person", "@id": "https://mikefri-studio.github.io/#person",
       "name": "Michaël Frischherz", "alternateName": "Mikefri Apps",
-      "jobTitle": "Développeur indépendant", "email": "mailto:mikefri.app@gmail.com", "nationality": "French" },
+      "jobTitle": "Développeur indépendant", "email": "mailto:mikefri.app@gmail.com", "nationality": "French",
+      "sameAs": ["https://www.youtube.com/@Mikefri-studio"] },
     { "@type": "WebSite", "url": "https://mikefri-studio.github.io/", "name": "Mikefri Apps",
       "inLanguage": "fr-FR", "publisher": { "@id": "https://mikefri-studio.github.io/#person" } },
     { "@type": "SoftwareApplication", "name": "Radio Flow", "operatingSystem": "ANDROID",
@@ -84,7 +85,7 @@ h1 em{font-style:normal;background:linear-gradient(90deg,var(--orange-light),var
   -webkit-background-clip:text;background-clip:text;color:transparent}
 header p{max-width:620px;margin:20px auto 30px;color:var(--muted);font-size:1.15rem;line-height:1.7}
 .cta{display:flex;gap:14px;flex-wrap:wrap;justify-content:center}
-.btn{padding:14px 30px;border-radius:14px;font-weight:700;text-decoration:none;transition:.3s;font-size:1rem}
+.btn{padding:14px 30px;border-radius:14px;font-weight:700;text-decoration:none;transition:.3s;font-size:1rem;display:inline-block}
 .btn-primary{background:linear-gradient(135deg,var(--orange-light),var(--orange-dark));color:#fff;
   box-shadow:0 10px 30px rgba(249,115,22,.35)}
 .btn-primary:hover{transform:translateY(-3px);box-shadow:0 16px 40px rgba(249,115,22,.5)}
@@ -129,6 +130,18 @@ h2 em{font-style:normal;color:var(--orange)}
   box-shadow:var(--shadow);line-height:1.8;color:var(--muted)}
 .about strong{color:var(--orange-dark)}
 
+/* ===== YOUTUBE ===== */
+.youtube-section{text-align:center}
+.youtube-card{max-width:500px;margin:0 auto;background:var(--card);border:1px solid var(--border);
+  border-radius:22px;padding:40px;box-shadow:var(--shadow);transition:.35s}
+.youtube-card:hover{transform:translateY(-5px);box-shadow:0 20px 50px rgba(234,88,12,.18)}
+.youtube-icon{width:80px;height:80px;margin:0 auto 20px;border-radius:20px;display:flex;align-items:center;
+  justify-content:center;font-size:2.2rem;
+  background:linear-gradient(135deg,#ff4444,#cc0000);color:#fff;
+  box-shadow:0 10px 30px rgba(255,0,0,.25)}
+.youtube-card h3{font-size:1.4rem;font-weight:800;margin-bottom:10px}
+.youtube-card p{color:var(--muted);margin-bottom:22px}
+
 /* ===== CONTACT ===== */
 .contact{text-align:center}
 .mail{font-family:'Poppins';font-weight:800;font-size:clamp(1.1rem,3vw,1.6rem);color:var(--orange-dark);
@@ -140,6 +153,10 @@ footer{background:#2b2016;color:#e8d9c8;text-align:center;padding:40px 20px;marg
 footer a{color:#ffb35c;text-decoration:none}
 footer a:hover{text-decoration:underline}
 footer .foot-logo{height:56px;width:auto;border-radius:12px;margin-bottom:14px}
+.social-links{display:flex;gap:14px;justify-content:center;margin:16px 0}
+.social-links a{width:42px;height:42px;border-radius:12px;background:rgba(255,179,92,.15);
+  display:flex;align-items:center;justify-content:center;font-size:1.2rem;transition:.3s;color:#ffb35c;text-decoration:none}
+.social-links a:hover{background:var(--orange);color:#fff;transform:translateY(-3px)}
 
 /* ===== ANIMATIONS ===== */
 .reveal{opacity:0;transform:translateY(28px);transition:all .8s ease}
@@ -155,6 +172,7 @@ footer .foot-logo{height:56px;width:auto;border-radius:12px;margin-bottom:14px}
     <li><a href="#apps">Applications</a></li>
     <li><a href="#engagements">Engagements</a></li>
     <li><a href="#apropos">À propos</a></li>
+    <li><a href="#youtube">YouTube</a></li>
     <li><a href="#contact">Contact</a></li>
   </ul>
 </nav>
@@ -205,7 +223,7 @@ footer .foot-logo{height:56px;width:auto;border-radius:12px;margin-bottom:14px}
     <div class="valeur reveal"><div class="ico">💯</div><h4>GRATUITÉ</h4><p>Pas d'abonnement caché, pas de surprise.</p></div>
     <div class="valeur reveal"><div class="ico">🚫</div><h4>SANS PUB INTRUSIVE</h4><p>Votre confort d'utilisation d'abord.</p></div>
     <div class="valeur reveal"><div class="ico">🔒</div><h4>VIE PRIVÉE</h4><p>Le minimum de données, le maximum de respect.</p></div>
-    <div class="valeur reveal"><div class="ico">🇫</div><h4>FAIT EN FRANCE</h4><p>Développé avec passion, mis à jour régulièrement.</p></div>
+    <div class="valeur reveal"><div class="ico">🇫🇷</div><h4>FAIT EN FRANCE</h4><p>Développé avec passion, mis à jour régulièrement.</p></div>
   </div>
 </section>
 
@@ -219,6 +237,17 @@ footer .foot-logo{height:56px;width:auto;border-radius:12px;margin-bottom:14px}
   </div>
 </section>
 
+<section id="youtube" class="youtube-section">
+  <h2>MA <em>CHAÎNE YOUTUBE</em></h2>
+  <p class="sous-titre">Découvrez mes apps en vidéo et suivez les coulisses du développement.</p>
+  <div class="youtube-card reveal">
+    <div class="youtube-icon">▶</div>
+    <h3>Mikefri Studio</h3>
+    <p>Tutoriels, démos et actualités de mes applications Android. Abonnez-vous pour ne rien manquer !</p>
+    <a class="btn btn-primary" href="https://www.youtube.com/@Mikefri-studio" target="_blank">▶ Voir la chaîne</a>
+  </div>
+</section>
+
 <section id="contact" class="contact">
   <h2>ME <em>CONTACTER</em></h2>
   <p class="sous-titre">Une question, un partenariat, un bug à signaler ?</p>
@@ -227,6 +256,11 @@ footer .foot-logo{height:56px;width:auto;border-radius:12px;margin-bottom:14px}
 
 <footer>
   <img class="foot-logo" src="logo.png" alt="Logo Mikefri Apps"><br>
+  <div class="social-links">
+    <a href="https://www.youtube.com/@Mikefri-studio" target="_blank" title="YouTube">▶</a>
+    <a href="mailto:mikefri.app@gmail.com" title="Email">✉</a>
+    <a href="https://play.google.com/store/apps/dev?id=Mikefri+Apps" target="_blank" title="Google Play">📱</a>
+  </div>
   © 2026 Mikefri Apps – France<br><br>
   <a href="https://mikefri-studio.github.io/Regles-de-confidentialite/RadioFlow-Regles.html">Confidentialité Radio Flow</a> ·
   <a href="https://mikefri-studio.github.io/Regles-de-confidentialite/RadarZen-Regles.html">Confidentialité RadarZen</a>
