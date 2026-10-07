@@ -58,23 +58,23 @@ body{font-family:'Inter',system-ui,sans-serif;color:var(--text);background:var(-
   background-image:radial-gradient(rgba(249,115,22,.07) 1px,transparent 1px);background-size:24px 24px;overflow-x:hidden}
 h1,h2,h3,h4{font-family:'Poppins',sans-serif}
 
-/* NAVBAR */
+/* ===== NAVBAR ===== */
 nav{position:fixed;top:0;width:100%;z-index:100;display:flex;justify-content:space-between;align-items:center;
   padding:12px 6%;background:rgba(255,248,241,.85);backdrop-filter:blur(12px);border-bottom:1px solid var(--border)}
 .brand{display:flex;align-items:center;gap:12px;text-decoration:none;color:var(--text)}
-.brand img{width:42px;height:42px;border-radius:10px;box-shadow:0 4px 14px rgba(249,115,22,.35)}
+.brand img{height:42px;width:auto;border-radius:10px;box-shadow:0 4px 14px rgba(249,115,22,.35)}
 .brand span{font-family:'Poppins';font-weight:800;font-size:1.15rem;letter-spacing:.5px}
 nav ul{display:flex;gap:26px;list-style:none}
 nav ul a{text-decoration:none;color:var(--muted);font-weight:600;font-size:.95rem;transition:.3s}
 nav ul a:hover{color:var(--orange)}
 
-/* HERO */
+/* ===== HERO ===== */
 header{min-height:100vh;display:flex;flex-direction:column;justify-content:center;align-items:center;
   text-align:center;padding:130px 20px 70px;position:relative}
 header::before{content:'';position:absolute;top:-20%;left:50%;transform:translateX(-50%);
   width:700px;height:700px;border-radius:50%;z-index:-1;
   background:radial-gradient(circle,rgba(255,179,92,.35),transparent 65%)}
-.logo-hero{width:160px;height:160px;border-radius:34px;box-shadow:0 20px 60px rgba(249,115,22,.35);
+.logo-hero{height:210px;width:auto;border-radius:36px;box-shadow:0 20px 60px rgba(249,115,22,.35);
   animation:floaty 5s ease-in-out infinite}
 @keyframes floaty{0%,100%{transform:translateY(0)}50%{transform:translateY(-14px)}}
 .badge{margin:28px 0 18px;padding:8px 20px;border-radius:50px;background:#fff;border:1px solid var(--border);
@@ -91,13 +91,13 @@ header p{max-width:620px;margin:20px auto 30px;color:var(--muted);font-size:1.15
 .btn-ghost{background:#fff;color:var(--text);border:1px solid var(--border);box-shadow:var(--shadow)}
 .btn-ghost:hover{border-color:var(--orange);color:var(--orange-dark)}
 
-/* SECTIONS */
+/* ===== SECTIONS ===== */
 section{max-width:1100px;margin:0 auto;padding:80px 20px}
 h2{font-size:clamp(1.5rem,3vw,2.1rem);font-weight:800;text-align:center;margin-bottom:14px}
 h2 em{font-style:normal;color:var(--orange)}
 .sous-titre{text-align:center;color:var(--muted);margin-bottom:44px}
 
-/* CARTES APPS */
+/* ===== CARTES APPS ===== */
 .apps{display:grid;gap:24px;grid-template-columns:repeat(auto-fit,minmax(290px,1fr))}
 .card{position:relative;background:var(--card);border:1px solid var(--border);border-radius:22px;
   padding:32px;box-shadow:var(--shadow);transition:.35s;overflow:hidden}
@@ -114,7 +114,7 @@ h2 em{font-style:normal;color:var(--orange)}
 .tag-test{background:#fff4e5;color:#ea580c;border:1px solid #fed7aa}
 .card .btn{display:inline-block;padding:11px 22px;font-size:.9rem}
 
-/* ENGAGEMENTS */
+/* ===== ENGAGEMENTS ===== */
 .valeurs{display:grid;gap:18px;grid-template-columns:repeat(auto-fit,minmax(220px,1fr))}
 .valeur{background:var(--card);border:1px solid var(--border);border-radius:18px;padding:26px;
   text-align:center;box-shadow:var(--shadow);transition:.3s}
@@ -124,24 +124,24 @@ h2 em{font-style:normal;color:var(--orange)}
 .valeur h4{font-size:.95rem;font-weight:800;margin-bottom:6px}
 .valeur p{color:var(--muted);font-size:.92rem}
 
-/* À PROPOS */
+/* ===== À PROPOS ===== */
 .about{background:var(--card);border:1px solid var(--border);border-radius:22px;padding:40px;
   box-shadow:var(--shadow);line-height:1.8;color:var(--muted)}
 .about strong{color:var(--orange-dark)}
 
-/* CONTACT */
+/* ===== CONTACT ===== */
 .contact{text-align:center}
 .mail{font-family:'Poppins';font-weight:800;font-size:clamp(1.1rem,3vw,1.6rem);color:var(--orange-dark);
   text-decoration:none}
 .mail:hover{text-decoration:underline}
 
-/* FOOTER */
+/* ===== FOOTER ===== */
 footer{background:#2b2016;color:#e8d9c8;text-align:center;padding:40px 20px;margin-top:60px;font-size:.92rem}
 footer a{color:#ffb35c;text-decoration:none}
 footer a:hover{text-decoration:underline}
-footer .foot-logo{width:48px;height:48px;border-radius:12px;margin-bottom:14px}
+footer .foot-logo{height:56px;width:auto;border-radius:12px;margin-bottom:14px}
 
-/* ANIMATIONS */
+/* ===== ANIMATIONS ===== */
 .reveal{opacity:0;transform:translateY(28px);transition:all .8s ease}
 .reveal.visible{opacity:1;transform:translateY(0)}
 @media(max-width:700px){nav ul{display:none}}
